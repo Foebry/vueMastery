@@ -19,6 +19,7 @@ let app = new Vue({
     ],
     sizes: ["XXL", "XL", "L", "M", "S", "XS", "XXS"],
     cart: 0,
+    outOfStockClass: "out-of-stock",
   },
   methods: {
     addToCart: function () {
