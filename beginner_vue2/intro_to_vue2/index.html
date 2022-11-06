@@ -9,43 +9,10 @@
   </head>
   <body>
     <div id="app">
-      <h1>{{variant + " " + product}}</h1>
-      <p v-if="inventory > 10">In stock</p>
-      <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out</p>
-      <p :class="{outOfStock: inStock}">Out of stock</p>
-      <p v-show="inStock">In Stock</p>
-      <span v-if="onSale">onSale!</span>
-      <ul>
-        <li v-for="detail in details">{{detail}}</li>
-      </ul>
-      <div
-        v-for="variant in variants"
-        :key="variant.variantId"
-        class="color-box"
-        :style="{backgroundColor: variant.variantColor, width: '20px', height: '20px'}"
-        @mouseover="updateProduct(variant.variantColor)"
-      >
-        <!-- <p @mouseover="updateProduct(variant.variantColor)">
-          {{variant.variantColor}}
-        </p> -->
-      </div>
-      <h2>Sizes</h2>
-      <ul>
-        <li v-for="size in sizes" :id="size">{{size}}</li>
-      </ul>
-      <div style="display: flex; gap: 10px">
-        <button
-          v-on:click="addToCart"
-          :disabled="!inStock"
-          :class="{disabledButton: !inStock}"
-        >
-          Add to cart
-        </button>
-        <button @click="removeFromCart">Remove from cart</button>
-      </div>
-      <div class="cart">
-        <p>Cart ({{cart}})</p>
-      </div>
+      <product
+        message="Programming in Vue is fun!"
+        :premium="premium"
+      ></product>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
