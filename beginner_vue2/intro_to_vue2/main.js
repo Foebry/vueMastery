@@ -3,6 +3,18 @@ let app = new Vue(
     el: "#app",
     data: {
       premium: true,
+      cart: [],
+    },
+    methods: {
+      addToCart: function (id) {
+        this.cart.push(id);
+      },
+      removeFromCart: function (id) {
+        const toRemove = this.cart.find((el) => el === id);
+        const index = this.cart.indexOf(toRemove);
+        const newCart = this.cart.filter((_, idx) => idx !== index);
+        this.cart = newCart;
+      },
     },
   },
 
@@ -52,16 +64,14 @@ let app = new Vue(
     </button>
     <button @click="removeFromCart">Remove from cart</button>
   </div>
-  <div class="cart">
-    <p>Cart ({{cart}})</p>
-  </div>
+  
   <h1>{{message}}</h1></div>`,
     data() {
       return {
         product: "Boots",
         brand: "Vue Mastery",
         variant: "",
-        inStock: false,
+        inStock: true,
         inventory: 8,
         onSale: true,
         details: ["80% cotton", "20% polyester", "Gender-neutral"],
@@ -76,16 +86,15 @@ let app = new Vue(
           },
         ],
         sizes: ["XXL", "XL", "L", "M", "S", "XS", "XXS"],
-        cart: 0,
         outOfStockClass: "out-of-stock",
       };
     },
     methods: {
       addToCart: function () {
-        this.cart += 1;
+        this.$emit("add-to-cart", this.variants[0].variantId);
       },
       removeFromCart: function () {
-        this.cart -= 1;
+        this.$emit("remove-from-cart", this.variants[0].variantId);
       },
       updateProduct: function (variant) {
         this.variant = variant;
