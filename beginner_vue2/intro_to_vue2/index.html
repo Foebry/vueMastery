@@ -9,6 +9,11 @@
   <body>
     <div id="app">
       <h1>{{product}}</h1>
+      <p v-if="inventory > 10">In stock</p>
+      <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out</p>
+      <p v-else>Out of stock</p>
+      <p v-show="inStock">In Stock</p>
+      <span v-if="onSale">onSale!</span>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
