@@ -1,6 +1,7 @@
 <template>
   <ul>
     <EventCardVue />
+    <BaseIcon />
   </ul>
 </template>
 
