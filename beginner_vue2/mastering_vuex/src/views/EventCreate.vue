@@ -74,7 +74,10 @@ export default {
   },
   methods: {
     async createEvent() {
-      const { success } = await this.$store.dispatch('createEvent', this.event);
+      const { success } = await this.$store.dispatch(
+        'event/createEvent',
+        this.event
+      );
       if (success) {
         this.$router.push({
           name: 'event-show',
@@ -84,7 +87,7 @@ export default {
       this.event = this.createFreshEventObject();
     },
     createFreshEventObject() {
-      const user = this.$store.state.user;
+      const user = this.$store.state.user.user;
       return {
         user,
         id: Math.random().toString(16).substring(2),
