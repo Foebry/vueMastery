@@ -7,6 +7,7 @@ import NProgress from 'nprogress';
 import store from '@/store/index';
 import NotFound from '@/views/NotFound';
 import NetworkIssue from '@/views/NetworkIssue';
+import ExamplePage from '@/views/ExamplePage';
 
 Vue.use(VueRouter);
 
@@ -40,6 +41,11 @@ const routes = [
           } else next({ name: 'network-issue' });
         });
     },
+  },
+  {
+    path: '/example',
+    name: '/example',
+    component: ExamplePage,
   },
   {
     path: '/404',
