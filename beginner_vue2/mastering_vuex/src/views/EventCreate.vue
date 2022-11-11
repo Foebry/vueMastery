@@ -83,7 +83,8 @@ export default {
           name: 'event-show',
           params: { id: this.event.id },
         });
-      } else console.log('There was an issue create the event');
+      } else {
+      }
       this.event = this.createFreshEventObject();
     },
     createFreshEventObject() {

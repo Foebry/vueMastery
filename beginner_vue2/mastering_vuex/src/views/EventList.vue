@@ -40,7 +40,11 @@ export default {
     page() {
       return parseInt(this.$route.query.page) || 1;
     },
-    ...mapState(['event', 'user', 'totalEvents']),
+    totalEvents() {
+      // return this.$store.getters.event.getTotalEvents();
+      return this.$store.getTotalEvents;
+    },
+    ...mapState(['event', 'user']),
   },
 };
 </script>
