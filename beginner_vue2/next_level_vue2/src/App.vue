@@ -9,6 +9,7 @@
 <script>
 import NavBar from '@/components/NavBar';
 import NotificationContrainer from './components/NotificationContrainer.vue';
+
 export default {
   components: {
     NavBar,

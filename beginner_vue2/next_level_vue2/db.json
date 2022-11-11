@@ -3,7 +3,7 @@
     {
       "id": 1,
       "title": "Beach Cleanup",
-      "date": "Aug 28 2018",
+      "date": "2022-11-11T10:05:00.000Z",
       "time": "10:00",
       "location": "Daytona Beach",
       "description": "Let's clean up this beach.",
@@ -31,7 +31,7 @@
     {
       "id": 2,
       "title": "Park Cleanup",
-      "date": "Nov 12 2018",
+      "date": "2022-11-11T10:05:00.000Z",
       "time": "12:00",
       "location": "132 N Magnolia Street, Orlando, Florida",
       "description": "We're going to clean up this park.",
@@ -51,7 +51,7 @@
     {
       "id": 3,
       "title": "Pet Adoption Day",
-      "date": "Dec 2 2018",
+      "date": "2022-11-11T10:05:00.000Z",
       "time": "12:00",
       "location": "132 N Magnolia Street, Orlando, Florida",
       "description": "Help animals find new homes.",
@@ -104,8 +104,8 @@
       "title": "new test",
       "description": "new test",
       "location": "",
-      "date": "",
-      "time": "",
+      "date": "2022-11-11T10:05:00.000Z",
+      "time": "10:00",
       "attendees": []
     },
     {
@@ -122,8 +122,8 @@
       "title": "",
       "description": "",
       "location": "",
-      "date": "",
-      "time": "",
+      "date": "2022-11-11T10:05:00.000Z",
+      "time": "10:00",
       "attendees": []
     },
     {
@@ -140,8 +140,8 @@
       "title": "",
       "description": "",
       "location": "",
-      "date": "",
-      "time": "",
+      "date": "2022-11-11T10:05:00.000Z",
+      "time": "10:00",
       "attendees": []
     },
     {
@@ -158,8 +158,8 @@
       "title": "Latest test",
       "description": "",
       "location": "",
-      "date": "",
-      "time": "",
+      "date": "2022-11-11T10:05:00.000Z",
+      "time": "10:00",
       "attendees": []
     },
     {
@@ -176,8 +176,8 @@
       "title": "Housing",
       "description": "",
       "location": "",
-      "date": "",
-      "time": "",
+      "date": "2022-11-11T10:05:00.000Z",
+      "time": "10:00",
       "attendees": []
     },
     {
@@ -194,8 +194,8 @@
       "title": "Food",
       "description": "",
       "location": "",
-      "date": "",
-      "time": "",
+      "date": "2022-11-11T10:05:00.000Z",
+      "time": "10:00",
       "attendees": []
     },
     {
@@ -212,8 +212,8 @@
       "title": "",
       "description": "",
       "location": "",
-      "date": "",
-      "time": "",
+      "date": "2022-11-11T10:05:00.000Z",
+      "time": "10:00",
       "attendees": []
     },
     {
@@ -230,8 +230,8 @@
       "title": "",
       "description": "",
       "location": "",
-      "date": "",
-      "time": "",
+      "date": "2022-11-11T10:05:00.000Z",
+      "time": "10:00",
       "attendees": []
     },
     {
@@ -248,8 +248,8 @@
       "title": "",
       "description": "",
       "location": "",
-      "date": "",
-      "time": "",
+      "date": "2022-11-11T10:05:00.000Z",
+      "time": "10:00",
       "attendees": []
     },
     {
@@ -266,8 +266,8 @@
       "title": "",
       "description": "",
       "location": "",
-      "date": "",
-      "time": "",
+      "date": "2022-11-11T10:05:00.000Z",
+      "time": "10:00",
       "attendees": []
     },
     {
@@ -284,8 +284,8 @@
       "title": "Title",
       "description": "",
       "location": "",
-      "date": "",
-      "time": "",
+      "date": "2022-11-11T10:05:00.000Z",
+      "time": "10:00",
       "attendees": []
     },
     {
@@ -302,8 +302,8 @@
       "title": "test",
       "description": "",
       "location": "",
-      "date": "",
-      "time": "",
+      "date": "2022-11-11T10:05:00.000Z",
+      "time": "10:00",
       "attendees": []
     },
     {
@@ -320,8 +320,8 @@
       "title": "",
       "description": "",
       "location": "",
-      "date": "",
-      "time": "",
+      "date": "2022-11-11T10:05:00.000Z",
+      "time": "10:00",
       "attendees": []
     },
     {
@@ -338,8 +338,8 @@
       "title": "",
       "description": "",
       "location": "",
-      "date": "",
-      "time": "",
+      "date": "2022-11-11T10:05:00.000Z",
+      "time": "10:00",
       "attendees": []
     },
     {
@@ -356,8 +356,8 @@
       "title": "",
       "description": "",
       "location": "",
-      "date": "",
-      "time": "",
+      "date": "2022-11-11T10:05:00.000Z",
+      "time": "10:00",
       "attendees": []
     }
   ]

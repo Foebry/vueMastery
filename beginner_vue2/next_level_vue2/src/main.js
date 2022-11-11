@@ -6,6 +6,9 @@ import upperFirst from 'lodash/upperFirst';
 import camelCase from 'lodash/camelCase';
 import 'nprogress/nprogress.css';
 import Vuelidate from 'vuelidate';
+import { formatDate } from './filters/date';
+
+Vue.filter('date', formatDate);
 
 Vue.use(Vuelidate);
 
