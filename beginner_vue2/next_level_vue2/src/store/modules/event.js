@@ -76,11 +76,14 @@ export const actions = {
   },
   async fetchEvent({ commit, getters, dispatch }, id) {
     const event = getters.getEventById(id);
-    if (event) commit('SET_EVENT', event);
-    else {
+    if (event) {
+      commit('SET_EVENT', event);
+      return event;
+    } else {
       try {
         const { data } = await EventService.getEvent(id);
         if (data) commit('SET_EVENT', data);
+        return data;
       } catch (e) {
         const notification = {
           type: 'error',

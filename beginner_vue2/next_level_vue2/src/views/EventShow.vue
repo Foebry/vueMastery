@@ -29,23 +29,13 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
-import nprogress from 'nprogress';
-import store from '@/store';
-
 export default {
-  props: ['id'],
-  async beforeRouteEnter(routeTo, routeFrom, next) {
-    nprogress.start();
-
-    await store.dispatch('event/fetchEvent', routeTo.params.id);
-    nprogress.done();
-
-    next();
+  props: {
+    event: {
+      type: Object,
+      required: true,
+    },
   },
-  computed: mapState({
-    event: (state) => state.event.event,
-  }),
 };
 </script>
 
