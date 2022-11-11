@@ -59,38 +59,23 @@ export const actions = {
       throw e;
     }
   },
-  async fetchEvents({ commit, dispatch }, { page }) {
-    try {
-      const response = await EventService.getEvents(state.perPage, page);
-      if (response.data) {
-        commit('SET_TOTAL_EVENTS', parseInt(response.headers['x-total-count']));
-        commit('SET_EVENTS', response.data);
-        return response.data;
-      }
-    } catch (e) {
-      const notification = {
-        type: 'error',
-        message: e.message,
-      };
-      dispatch('notification/add', notification, { root: true });
-    }
+  fetchEvents({ commit, dispatch }, { page }) {
+    return EventService.getEvents(state.perPage, page).then((response) => {
+      commit('SET_TOTAL_EVENTS', parseInt(response.headers['x-total-count']));
+      commit('SET_EVENTS', response.data);
+      return response.data;
+    });
   },
-  async fetchEvent({ commit, getters, dispatch }, id) {
+  async fetchEvent({ commit, getters }, id) {
     const event = getters.getEventById(id);
     if (event) {
       commit('SET_EVENT', event);
       return event;
     } else {
-      try {
-        const { data } = await EventService.getEvent(id);
-        if (data) commit('SET_EVENT', data);
+      const { data } = await EventService.getEvent(id);
+      if (data) {
+        commit('SET_EVENT', data);
         return data;
-      } catch (e) {
-        const notification = {
-          type: 'error',
-          message: e.message,
-        };
-        dispatch('notification/add', notification, { root: true });
       }
     }
   },
