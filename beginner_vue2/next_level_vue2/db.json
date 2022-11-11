@@ -287,6 +287,24 @@
       "date": "",
       "time": "",
       "attendees": []
+    },
+    {
+      "user": {
+        "id": "abc123",
+        "name": "Sander Fabry"
+      },
+      "id": "ff5c70a04ea33",
+      "category": "",
+      "organizer": {
+        "id": "abc123",
+        "name": "Sander Fabry"
+      },
+      "title": "test",
+      "description": "",
+      "location": "",
+      "date": "",
+      "time": "",
+      "attendees": []
     }
   ]
 }
