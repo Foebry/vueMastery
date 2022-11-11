@@ -5,6 +5,7 @@ export const namespaced = true;
 export const state = {
   count: 0,
   totalEvents: 0,
+  perPage: 3,
   todos: [
     { id: 1, text: '...', done: true },
     { id: 2, text: '...', done: false },
@@ -58,13 +59,13 @@ export const actions = {
       throw e;
     }
   },
-  async fetchEvents({ commit, dispatch }, { perPage, page }) {
+  async fetchEvents({ commit, dispatch }, { page }) {
     try {
-      const response = await EventService.getEvents(perPage, page);
+      const response = await EventService.getEvents(state.perPage, page);
       if (response.data) {
-        //   console.log(response.data);
         commit('SET_TOTAL_EVENTS', parseInt(response.headers['x-total-count']));
         commit('SET_EVENTS', response.data);
+        return response.data;
       }
     } catch (e) {
       const notification = {

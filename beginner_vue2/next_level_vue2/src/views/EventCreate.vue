@@ -51,6 +51,8 @@
 <script>
 import { mapState, mapGetters } from 'vuex';
 import Datepicker from 'vuejs-datepicker';
+import nprogress from 'nprogress';
+
 export default {
   computed: {
     ...mapGetters(['getEventById']),
@@ -74,18 +76,22 @@ export default {
   },
   methods: {
     async createEvent() {
-      const { success } = await this.$store.dispatch(
-        'event/createEvent',
-        this.event
-      );
-      if (success) {
-        this.$router.push({
-          name: 'event-show',
-          params: { id: this.event.id },
-        });
-      } else {
+      nprogress.start();
+      try {
+        const { success } = await this.$store.dispatch(
+          'event/createEvent',
+          this.event
+        );
+        if (success) {
+          this.$router.push({
+            name: 'event-show',
+            params: { id: this.event.id },
+          });
+          this.event = this.createFreshEventObject();
+        }
+      } catch (e) {
+        nprogress.done();
       }
-      this.event = this.createFreshEventObject();
     },
     createFreshEventObject() {
       const user = this.$store.state.user.user;
