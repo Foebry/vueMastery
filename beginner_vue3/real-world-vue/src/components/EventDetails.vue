@@ -7,16 +7,24 @@
 </template>
 
 <script lang="ts">
-import EventsService from '@/services/EventsService';
+import { onMounted, ref } from 'vue';
+import { Event } from '@/store/modules/EventModule';
+import store from '@/store';
+
 export default {
-  props: ['id'],
-  data() {
-    return { event: null };
+  props: {
+    id: { type: Number, required: true },
   },
-  created() {
-    EventsService.getEventById(this.$props.id)
-      .then((response) => (this.$data.event = response.data))
-      .catch((error) => console.log(error));
+  setup(props) {
+    const event = ref<Event>();
+
+    onMounted(async () => {
+      event.value = await store.dispatch('event/getEventById', {
+        id: props.id,
+      });
+    });
+
+    return { event };
   },
 };
 </script>

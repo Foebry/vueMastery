@@ -6,25 +6,23 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, onMounted, ref } from 'vue';
 import EventCard from '@/components/EventCard.vue'; // @ is an alias to /src
-import EventsService from '@/services/EventsService';
+import store from '@/store';
+import { Event } from '@/store/modules/EventModule';
 
 export default defineComponent({
   name: 'HomeView',
-  data() {
-    return {
-      events: null,
-    };
+  setup() {
+    const events = ref<Event[]>([]);
+
+    onMounted(async () => {
+      events.value = await store.dispatch('event/getEvents', {});
+    });
+
+    return { events };
   },
-  created() {
-    EventsService.getEvents()
-      .then((response) => (this.$data.events = response.data))
-      .catch((error) => console.log(error));
-  },
-  components: {
-    EventCard,
-  },
+  components: { EventCard },
 });
 </script>
 
