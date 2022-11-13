@@ -1,16 +1,16 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import EventList from "@/views/EventList.vue";
-import AboutView from "@/views/AboutView.vue";
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+import EventList from '@/views/EventList.vue';
+import AboutView from '@/views/AboutView.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: "/",
-    name: "EventList",
+    path: '/',
+    name: 'EventList',
     component: EventList,
   },
   {
-    path: "/about",
-    name: "about",
+    path: '/about',
+    name: 'about',
     component: AboutView,
   },
 ];
